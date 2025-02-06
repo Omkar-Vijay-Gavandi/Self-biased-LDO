@@ -21,6 +21,10 @@ Week 1 updates:-
 This week, I focused on understanding the functionality of the Operational Transconductance Amplifier (OTA) implemented using a folded cascode configuration. The circuit employs adaptive biasing, where transistors Md1-Md7 adjust the bias based on the load current. Currently, I am working on a two-stage configuration that remains active when the load current is below a threshold of 919µA.
 
 ### OTA Operation
+
+![image](https://github.com/user-attachments/assets/cb5ff7d5-f588-4cb4-bd76-799e2fceaa0a)
+
+
 - The PMOS transistor Md1 mirrors the current flowing in the pass transistor and dynamically adjusts the OTA’s bias as the load current varies.
 - This mirrored current is then passed through a current mirror circuit, which sets the bias for the folded cascode stage.
 - The circuit operates with a reference voltage of 0.6V and a supply voltage of 0.8V. Given the low supply voltage and the need for a good Power Supply Rejection Ratio (PSRR), a folded cascode configuration is used to optimize headroom.
@@ -29,5 +33,5 @@ This week, I focused on understanding the functionality of the Operational Trans
 This implementation enhances power efficiency and ensures stable operation across varying load conditions.
 
 
-![OTA_image][def]
+
 
