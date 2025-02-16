@@ -147,12 +147,25 @@ The Passfet goes in the subthreshold region of operation. Thus we don't get prop
 
 - Since we are designing for a loop gain of 1000 or 60db we need to make sure that we can incorporate the gain within the two blocks in the loop which are the OTA block and the passfet block.
 - We start by sizing the passfet. We start designing by taking the least length from the techplots as we want to minimize the area of the passfet. We then calculate the gain for the OTA from the techplots. If this gain is more than the values present in the techplots, we need to redesign the passfet in such a way that the OTA gain is within the reach of the techplots.
+For example if we take the least length for the passfet its gain will be less than 20 for PMOS and thus we won't be able to get the corresponding design for the NMOS in the OTA as we don't have those values in our techplots.
 
+![gmro_nmos](gmro_nmos.png)
 
+- After finding the ideal length for the passfet we now have to find the width from the Id/w plots for the designed gain. Since we already have fixed the length in the previous step we can find the corresponding Id/w and get the value of w from Id/( Id/w ) expression.
+- Repeat the last step till you design the entire OTA and the passfet.
+- Once we get the appropriate widths and lengths for the passfet and the OTA we move on to the current mirror circuit. We desingn the current mirror circuit for the maximum possible length in our techplots which in my case is 4050nm in order to eliminate the Vds mismatch in the design.
 
+![alt text](idw_nmos.png)
+
+![alt text](idw_pmos.png)
+
+- We then get the Id/w for the NMOS and the PMOS current mirror circuit and from there we will get the desired widths following which we have designed the entired Folded cascode LDO.
+
+##### Remember:- Make sure to take the correct values of current as it gets divided in the OTA.
 
 ### Small signal model
 
-### Octagon
+![alt text](image-7.png)
 
+![alt text](image-8.png)
 
