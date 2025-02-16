@@ -12,29 +12,6 @@
 | **An ULP and Very Efficient Adaptively Biased LDO Regulator for Harvesting Application** | LDO regulator with adaptive biasing that adjusts quiescent current based on load current for high efficiency over 1 μA to 3 mA load range.              | FVF cells replace constant-current sources in the error amplifier, improving the slew rate without requiring a high fixed bias current.                        | 130nm      |
 | **Design of an Adaptively Biased Low-Dropout Regulator With a Current Reusing Current-Mode OTA Using an Intuitive Analysis Method** | Proposed a current reusing current-mode OTA (CRCM-OTA) for use in adaptively biased LDOs (AB-LDOs).                                                      | Introduced a CRCM-OTA for AB-LDO, modified from the current-mode OTA (CM-OTA).                                                                               | 180nm      |
 
-
-Week 1 updates:-
-
-## Week 2 Updates
-
-### Overview
-This week, I focused on understanding the functionality of the Operational Transconductance Amplifier (OTA) implemented using a folded cascode configuration. The circuit employs adaptive biasing, where transistors Md1-Md7 adjust the bias based on the load current. Currently, I am working on a two-stage configuration that remains active when the load current is below a threshold of 919µA.
-
-### OTA Operation
-
-![image](https://github.com/user-attachments/assets/cb5ff7d5-f588-4cb4-bd76-799e2fceaa0a)
-
-
-- The PMOS transistor Md1 mirrors the current flowing in the pass transistor and dynamically adjusts the OTA’s bias as the load current varies.
-- This mirrored current is then passed through a current mirror circuit, which sets the bias for the folded cascode stage.
-- The circuit operates with a reference voltage of 0.6V and a supply voltage of 0.8V. Given the low supply voltage and the need for a good Power Supply Rejection Ratio (PSRR), a folded cascode configuration is used to optimize headroom.
-- As the load current changes, Md1 generates a scaled version of the current to bias the OTA transistors accordingly. This ensures that all transistors remain in saturation while minimizing power consumption when no significant load is connected.
-
-This implementation enhances power efficiency and ensures stable operation across varying load conditions.
-
-
-
-
 # Design of an Adaptive LDO circuitry for Low-Power IoT Applications
 
 ### Choice of Technology Node:- Gpdk045
@@ -79,7 +56,7 @@ I have chosen the folded cascode configuration in the design.
 
 ### Square Law vs gm/Id methodology
 
-| Equation-based Approach | Techplot-based Approach |
+| Square law -based Approach | Techplot-based Approach |
 |-------------------------|-------------------------|
 | As the length of the technology node decreases, the standard equation of `gm/Id = 2/Vov` is not valid and instead it follows a linear relation. **Thus**, we can’t apply square law for lower nm technology nodes. | While making **techplots**, we ask the tool to calculate the individual values of `gm/Id`, `gmro`, `ft`, and `Id/w` at different values of length instead of depending on the equation, and thus we get the exact curve which incorporates the short channel effects. |
 | Design will **take time** more for lower technology nodes as second-order effects come in picture. | Design will comparatively take less time as we can have a script to design the entire topology. |
@@ -88,9 +65,91 @@ I have chosen the folded cascode configuration in the design.
 
 ### Why gm/Id over square Law
 
+- I am using the gm/Id method to size the transistors as I was working with relaxed constraints and the speed to design the circuits is comparitively faster for gm/Id methodology.
+- Most importantly as I am working with 45nm technology node short channel effects can come in the picture which will be taken care by the gm/Id methodology.
+
 ### Results for different overdrive voltages
 
+- For gm/Id = 10,
+
+The PMOS current mirror near the rail voltage goes in linear region as we are providing very less headroom to the device.
+
+![gm_id vs vov](image-2.png)
+
+From the curve we can see that as vov increases gm/Id decreases. So for gm/Id = 10 we get a higher value of overdrive. In this case we can't bias our device as the current mirror in our device is not in saturation and it won't be able to bias the LDO with the required quoiscent current.
+
+![alt text](image-3.png)
+
+From the above simulation we can see that the transistor PM3 is in triode region of operation.
+
+- For gm/Id = 15,
+
+### PSRR and Saturation Current Range (Designed for 50µA)
+
+| Iload | PSRR (in dB) | Iq (range for which circuit is in saturation designed for 50µA) |
+|-------|-------------|--------------------------------------------------|
+| 100m  | -60.8      | 6µ - 55µ                                         |
+| 10m   | -55.3      | 6µ - 55µ                                         |
+| 1m    | -46.49     | 6µ - 55µ                                         |
+
+---
+
+### PSRR and Saturation Current Range (Designed for 5µA)
+
+| Iload | PSRR (in dB) | Iq (range for which circuit is in saturation designed for 5µA) |
+|-------|-------------|--------------------------------------------------|
+| 100m  | -53        | 0.4µ - 6µ                                        |
+| 10m   | -57        | 0.4µ - 6µ                                        |
+| 1m    | -54        | 0.4µ - 6µ                                        |
+
+The operating point summary is as follows:-
+
+![Operating-point](image-4.png)
+
+
+- For gm/Id = 17,
+
+
+### PSRR and Saturation Current Range (Designed for 50µA)
+
+| Iload | PSRR (in dB) | Iq (range for which circuit is in saturation designed for 50µA) |
+|-------|-------------|--------------------------------------------------|
+| 100m  | -70        | 13µ - 72.5µ                                      |
+| 10m   | -59.63     | 13µ - 72.5µ                                      |
+| 1m    | -43.6      | 13µ - 72.5µ                                      |
+
+---
+
+### PSRR and Saturation Current Range (Designed for 5µA)
+
+| Iload | PSRR (in dB) | Iq (range for which circuit is in saturation designed for 5µA) |
+|-------|-------------|--------------------------------------------------|
+| 100m  | -50        | 1µ - 6µ                                          |
+| 10m   | -68.5      | 1µ - 6µ                                          |
+| 1m    | -56.6      | 1µ - 6µ                                          |
+
+
+- For gm/Id = 20,
+
+The Passfet goes in the subthreshold region of operation. Thus we don't get proper functionality of the circuit and we observe a lesser gain.
+
+![PSRR plot](image-5.png)
+
+![operating_region](image-6.png)
+
+## Tradeoffs observed:-
+
+- As gm/Id increases Id/w decreases and thus the passfet size increases to approx 20m for a load of 100mA.
+- On the contrary if we decrease the gm/Id then passfet size decreases but the overdrive will increase which puts the PMOS M3 goes in triode region of operation.
+
+
 ### Algorithm
+
+- Since we are designing for a loop gain of 1000 or 60db we need to make sure that we can incorporate the gain within the two blocks in the loop which are the OTA block and the passfet block.
+- We start by sizing the passfet. We start designing by taking the least length from the techplots as we want to minimize the area of the passfet. We then calculate the gain for the OTA from the techplots. If this gain is more than the values present in the techplots, we need to redesign the passfet in such a way that the OTA gain is within the reach of the techplots.
+
+
+
 
 ### Small signal model
 
