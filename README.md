@@ -396,6 +396,18 @@ Schematic
 
 ![image](https://github.com/user-attachments/assets/9c491afb-de72-45e8-bb1d-0b298b002bf4)
 
+The resistance is as follows:-
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1782e7ad-a406-4416-8f1f-fe10fbfff6cd" alt="Image 1" width="24%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/b5343bcd-e243-420c-8c10-b13a70cc0230" alt="Image 2" width="24%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/13640517-7549-4ef4-a08a-278a1f17e588" alt="Image 3" width="24%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/2ea9e1ef-8b19-42c2-9324-4396ab68b4d3" alt="Image 4" width="24%"/>
+</p>
+
+
+
+
 
 
 
