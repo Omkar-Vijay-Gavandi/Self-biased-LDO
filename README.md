@@ -188,6 +188,10 @@ Since the drop across the bottom pmos is the highest the corresponding rout is h
 
 ![image](https://github.com/user-attachments/assets/2f1711b6-5f5f-4508-b1d9-d84e998c4d62)
 
+#### The loop gain is as follows:-
+
+![image](https://github.com/user-attachments/assets/1171167a-bc8a-4e4a-8e0b-fe10caad3c14)
+
 #### The sizing is as follows:-
 
 ![image](https://github.com/user-attachments/assets/631b7153-17ec-4da5-95d4-6420bfd301d6)
@@ -206,6 +210,10 @@ The resistance across the mosfets are as follows:-
 ### Schematic:-
 
 ![image](https://github.com/user-attachments/assets/31e92b88-7004-4b94-9b4d-1757fef26c01)
+
+### Loop gain
+
+![image](https://github.com/user-attachments/assets/aee61d65-e307-4645-b863-4859ea8f5065)
 
 ### Sizing 
 
@@ -249,6 +257,128 @@ The resistance in each nmosfet is as follows:-
 The resistance for the mosfet is as follows:-
 
 ![image](https://github.com/user-attachments/assets/2fd28e24-ab28-4a9a-b5fc-71a70502a2fa)
+
+
+## Modified Original Circuit
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/0ced70b6-8873-4fb4-a322-c45a08db0366)
+
+#### The loop gain is as follows:-
+
+![image](https://github.com/user-attachments/assets/3816f4cd-dc09-49a8-a1db-105a5f36ee2b)
+
+#### The sizing is as follows:-
+
+![image](https://github.com/user-attachments/assets/c0f2ee84-36fa-4fb7-a30e-7687d5154f1a)
+
+The resistance across the mosfets are as follows:-
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2d718d98-3903-46be-8605-e022bd466f18" alt="Image 1" width="24%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/82a366cc-b721-41bb-bb3b-bcb63f38c065" alt="Image 2" width="24%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/2907cf37-3856-4539-9d6d-20063a483687" alt="Image 3" width="24%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/a6e4ea05-d354-48f0-a540-707b2b53a4e5" alt="Image 4" width="24%"/>
+</p>
+
+### Conclusion
+
+By adding a recycled path the overall resistance of the NMOS side increases significantly. The Iq drops to 10nA. There is a 3rd path for the AC analysis. The overall loop gain increases which is a combined result of all these reasons and also the regulation is better.
+
+
+## Modified 3 stage circuit with added recycled path
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/4f869047-15a7-41cc-ba42-2d4d5dcbba9c)
+
+
+## Loop gain
+
+![image](https://github.com/user-attachments/assets/af2ebfd6-b717-4da8-bd28-cd540dec867f)
+
+
+## Sizing
+
+![image](https://github.com/user-attachments/assets/f5e3be3a-3275-4574-b347-961c6bb56b1e)
+
+
+## For PMOS
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/5676a9f4-e362-4b39-9e20-8f380b00aca4)
+
+The resistance is as follows:-
+
+![image](https://github.com/user-attachments/assets/09591282-6ca0-4ccf-8a64-5c72f8039ab8)
+
+## For NMOS
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/ee2e5c07-624d-4156-a874-e0fc99ff02f9)
+
+The resistance is as follows:-
+
+![image](https://github.com/user-attachments/assets/ee2ab498-92f2-4e61-8ed1-7842aa66f3ef)
+
+## For Both recycled paths
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/068040f8-08db-4182-b82b-81ca58ec8dbe)
+
+The resistance is as follows:-
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/51fc5dd6-a236-4c3f-bb2b-541d3adc4354" alt="Image 1" width="45%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/69571ebc-6ef9-40bc-a0ba-60dbb4af7fb6" alt="Image 2" width="45%"/>
+</p>
+
+## Conclusion
+
+The regulation has got better. The loop gain is better. The output resistance increases significantly. The Iq reduces significantly. However the initial theory holds true that the resistance across the series stages is not uniform where there is a significant drop across 1 transistor who has a higher resistance than the rest. The ultimate conclusion being that connecting the mosfets in series is not reducing the current in the mosfets by a significant margin but it is the recycled self biased addition that is able to reduce the current in the OTA as well as provide an additional recycled path which thereby increases the overall gain of the OTA from 50db to 55db.
+
+
+# Total self biased circuit without methodology
+
+### Schematic
+
+![image](https://github.com/user-attachments/assets/523bf2b3-4a3d-41e8-ba8d-7f84dd6135ee)
+
+### Sizing
+
+![image](https://github.com/user-attachments/assets/436124c8-874c-4d19-963f-f6e0614c5802)
+
+### The resistance is as follows
+
+#### For PMOS OTA
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/35206a8e-2c21-4c97-a2ad-52b6845a2ebd)
+
+Resistance
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a1854b05-093b-4e08-ab89-6f38b748e4d9" alt="Image 1" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/e4520f67-69c1-463e-ba51-45c21bc1c592" alt="Image 2" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/380e8783-0cf1-4a20-ba22-5f82c4498534" alt="Image 3" width="30%"/>
+</p>
+
+
+#### For NMOS OTA
+
+Schematic
+
+
+
+
+
+
+
 
 
 
