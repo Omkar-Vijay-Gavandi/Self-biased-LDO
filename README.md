@@ -344,69 +344,79 @@ The regulation has got better. The loop gain is better. The output resistance in
 
 # Total self biased circuit without methodology
 
-### Schematic
-
-![image](https://github.com/user-attachments/assets/523bf2b3-4a3d-41e8-ba8d-7f84dd6135ee)
-
-### Sizing
-
-![image](https://github.com/user-attachments/assets/436124c8-874c-4d19-963f-f6e0614c5802)
-
-### The resistance is as follows
-
-#### For PMOS OTA
-
-Schematic
-
-![image](https://github.com/user-attachments/assets/35206a8e-2c21-4c97-a2ad-52b6845a2ebd)
-
-Resistance
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a1854b05-093b-4e08-ab89-6f38b748e4d9" alt="Image 1" width="30%" style="margin-right:10px;"/>
-  <img src="https://github.com/user-attachments/assets/e4520f67-69c1-463e-ba51-45c21bc1c592" alt="Image 2" width="30%" style="margin-right:10px;"/>
-  <img src="https://github.com/user-attachments/assets/380e8783-0cf1-4a20-ba22-5f82c4498534" alt="Image 3" width="30%"/>
-</p>
-
-
-#### For NMOS OTA
-
-Schematic
-
-
-
-#### Final Topology
-
 ## Schematic
 
-![image](https://github.com/user-attachments/assets/3c0c9c1c-6b86-4dbe-b27a-c7cd0384d475)
+![image](https://github.com/user-attachments/assets/59ddfa71-c5c9-4308-8cf3-1804ab99b0c1)
 
 
 ## Loop gain
 
-![image](https://github.com/user-attachments/assets/176c0e2a-5d75-4d74-9990-75bd6f4ab1f6)
+![image](https://github.com/user-attachments/assets/6cab4fec-97b0-4607-9cfe-1e5ff37c45c0)
 
 
 ## PSRR
 
-![image](https://github.com/user-attachments/assets/c7ddbbfe-9434-41f8-812e-d10f3f2c69c3)
+![image](https://github.com/user-attachments/assets/18fe0305-1340-40a8-a734-6c7ae9347f9d)
 
 
 ## Sizing
 
-![image](https://github.com/user-attachments/assets/9c491afb-de72-45e8-bb1d-0b298b002bf4)
+![image](https://github.com/user-attachments/assets/ccb61e5b-f8e1-4998-8c2f-7207b4d331f2)
 
-The resistance is as follows:-
+
+### For PMOS OTA
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/fccb0856-7f29-4c40-b8e3-0ec056277f95)
+
+The resistance is as follows
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1782e7ad-a406-4416-8f1f-fe10fbfff6cd" alt="Image 1" width="24%" style="margin-right:6px;"/>
-  <img src="https://github.com/user-attachments/assets/b5343bcd-e243-420c-8c10-b13a70cc0230" alt="Image 2" width="24%" style="margin-right:6px;"/>
-  <img src="https://github.com/user-attachments/assets/13640517-7549-4ef4-a08a-278a1f17e588" alt="Image 3" width="24%" style="margin-right:6px;"/>
-  <img src="https://github.com/user-attachments/assets/2ea9e1ef-8b19-42c2-9324-4396ab68b4d3" alt="Image 4" width="24%"/>
+  <img src="https://github.com/user-attachments/assets/7fd0fbac-f70d-4a78-be29-8139f67acfd2" alt="Image 1" width="40%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/302ac444-6568-4f5f-baf0-d326be8bf8af" alt="Image 2" width="40%"/>
 </p>
 
+### For NMOS OTA and recycled path
 
+Schematic
 
+![image](https://github.com/user-attachments/assets/d46d66c1-a400-479d-a7d0-ffae20855c75)
+
+The resistance is as follows
+
+  <img src="https://github.com/user-attachments/assets/f5f61c92-a7f8-46fd-ad5b-0ffe6f2a8018" alt="Image 3" width="30%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/c36f9592-6ab0-4c6b-b1a8-e8a590d6374b" alt="Image 4" width="30%" style="margin-right:6px;"/>
+  <img src="https://github.com/user-attachments/assets/0f85dfa1-2aae-4dc7-8f9c-bf8784bc4f48" alt="Image 5" width="30%"/>
+</p>
+
+### Conclusion
+
+In the initial design I was getting a gain of gmro so instead of that I have tried cascoding the circuit to get a gain of (gmro)^2 from the circuit. Also in order to reduce the Iq I have added another recycled stage in the bottom. With the current sizing the recycled stage is not contributing to the gain but is rather acting as a stage which reduces the overall Iq of the design and thus the overall resistance of the n side FETs increases which further takes the gain of the overall OTA towards (gmro)^2. If I try to further cascode the PMOS stages then the resistance of individual FETS goes in G ohms range which dominates the Mohms range of the NMOS. In order to counter this we will need to add further stages in the NMOS side. Also the resistance of the NMOS side reduces at the junction of the folded cascode as the resistance at that point is (res of recycled NMOS || res of folded PMOS || res of NMOS and PMOS ) which reduces the overall n side resistance. So we would need to add further stages on the NMOS side or cascode the folded PMOS side further to increase the looking down resistance at the OTA output. The overall Iq is 4nA and the PSRR is -47db for a loop gain of 56db. 
+
+# Cascaded Self bias circuit without methodology ( Golden Creation )
+
+## Schematic
+
+![image](https://github.com/user-attachments/assets/0a6d8c51-4efe-4809-a7a6-f5af5ce46674)
+
+![image](https://github.com/user-attachments/assets/47191abe-4ab2-4ee1-9ff0-ac42e37b815d)
+
+## Loop gain
+
+![image](https://github.com/user-attachments/assets/77ab0776-d72b-4aaa-89fe-a0a655d1eb5c)
+
+## PSRR
+
+![image](https://github.com/user-attachments/assets/1c3e8f5d-9c26-4c3d-a353-e0117afbff4d)
+
+## Sizing
+
+![image](https://github.com/user-attachments/assets/3783f410-2c96-4e6a-939d-5684e1f3ce0a)
+
+## Conclusion
+
+The stability is gone. Sizing needs to be fixed. PSRR improved slightly. High mismatch is observed. As discussed I tried connecting the current mirror in the main OTA to eliminate the AC noise but that wont happen as the OTA is assymetric and thus there wont be a AC 0 point at the drain of PMOS current mirror ( if connected near source of PM26/ PM27 ). Also cascading is able to give a decent gain of 113db but there is introduction of zeros as seen in the phase plot. I have removed the additional recycled path in the design as it takes away the symmetricity of the OTA thus leading to more mismatch. Final conclusion is that in order to get the best PSRR out of this design it needs to be symmetric. Following gm/id will surely reduce the lengths and increase the widths of the design so the overall Iq of the design will increase.
 
 
 
