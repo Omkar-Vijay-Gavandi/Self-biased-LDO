@@ -375,9 +375,26 @@ Schematic
 
 
 
+#### Final Topology
+
+## Schematic
+
+![image](https://github.com/user-attachments/assets/3c0c9c1c-6b86-4dbe-b27a-c7cd0384d475)
 
 
+## Loop gain
 
+![image](https://github.com/user-attachments/assets/176c0e2a-5d75-4d74-9990-75bd6f4ab1f6)
+
+
+## PSRR
+
+![image](https://github.com/user-attachments/assets/c7ddbbfe-9434-41f8-812e-d10f3f2c69c3)
+
+
+## Sizing
+
+![image](https://github.com/user-attachments/assets/9c491afb-de72-45e8-bb1d-0b298b002bf4)
 
 
 
