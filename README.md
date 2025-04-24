@@ -169,3 +169,88 @@ For example if we take the least length for the passfet its gain will be less th
 
 ![alt text](image-8.png)
 
+- ## Can we operate a FET in the saturation region of operation with a high Vds across it?
+  Yes we can operate a FET with a high Vds in the saturation region of operation. However in the current design as the PMOS source voltage increases/decreases the Vsg will change and thus the device will go from subthreshold to saturation or vice versa. Similar operation is observed for NMOS.
+
+- ## Why does the bottom PMOS get a higher VDS when stacked in series?
+
+  ![image](https://github.com/user-attachments/assets/629fba68-7496-4ac5-b191-de1b9269b05c)
+
+Since the drop across the bottom pmos is the highest the corresponding rout is highest for that mosfet so irrespective of how many mosfets we are adding in series the mosfet at the bottom should have the highest resistance as the Vds across it is the highest.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4cb1cd60-1f34-4fb9-9143-7126346e3cc3" alt="Image 1" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/8645d79b-055e-4bb4-8789-8d5f94f0b307" alt="Image 2" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/e9c94e50-8d22-4312-baf8-7749189fa899" alt="Image 3" width="30%"/>
+</p>
+
+## Original circuit analysis
+
+![image](https://github.com/user-attachments/assets/2f1711b6-5f5f-4508-b1d9-d84e998c4d62)
+
+#### The sizing is as follows:-
+
+![image](https://github.com/user-attachments/assets/631b7153-17ec-4da5-95d4-6420bfd301d6)
+
+The resistance across the mosfets are as follows:-
+
+<p align="center">
+  <img src="<p align="center">
+  <img src="https://github.com/user-attachments/assets/5b723ef8-453a-4fbc-ba9b-da0a4fa91916" alt="Image 1" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/f47c893e-c9a6-4247-bcf9-94a63d098e41" alt="Image 2" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/8e480304-401f-4de6-ad12-a8823fc30d70" alt="Image 3" width="30%"/>
+</p>
+
+## For series connection of mosfets
+
+### Schematic:-
+
+![image](https://github.com/user-attachments/assets/31e92b88-7004-4b94-9b4d-1757fef26c01)
+
+### Sizing 
+
+![image](https://github.com/user-attachments/assets/db42e9f6-c045-41c2-b865-841e68e8315d)
+
+### PMOS in OTA
+
+#### Schematic
+
+![image](https://github.com/user-attachments/assets/9748a404-6ff8-4ef2-aa13-4f8427db336c)
+
+
+The resistance in each pmosfet is as follows:-
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3bec1a90-b828-4ebd-8453-3ead6d8379ed" alt="Image 1" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/e69276d5-cb37-48ad-8b83-3c7044fdb985" alt="Image 2" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/f1a91747-11e5-417d-9788-0848bd519e1d" alt="Image 3" width="30%"/>
+</p>
+
+### NMOS in OTA
+
+Schematic:-
+
+![image](https://github.com/user-attachments/assets/38735cf3-0cfe-414f-841b-ffcd0f5a704a)
+
+The resistance in each nmosfet is as follows:-
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/600fcc12-64ff-43d7-9ee0-610a468344d0" alt="Image 1" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/91e346f8-e9eb-4fb1-bb86-40324542b8c1" alt="Image 2" width="30%" style="margin-right:10px;"/>
+  <img src="https://github.com/user-attachments/assets/a5d92302-0525-45dd-93d7-0e63e61923c0" alt="Image 3" width="30%"/>
+</p>
+
+### NMOS recycled path
+
+#### Schematic
+
+![image](https://github.com/user-attachments/assets/daf4f42e-bde4-48bb-b9be-7de68cd183e1)
+
+The resistance for the mosfet is as follows:-
+
+![image](https://github.com/user-attachments/assets/2fd28e24-ab28-4a9a-b5fc-71a70502a2fa)
+
+
+
+
+
