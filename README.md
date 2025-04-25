@@ -418,6 +418,67 @@ In the initial design I was getting a gain of gmro so instead of that I have tri
 
 The stability is gone. Sizing needs to be fixed. PSRR improved slightly. High mismatch is observed. As discussed I tried connecting the current mirror in the main OTA to eliminate the AC noise but that wont happen as the OTA is assymetric and thus there wont be a AC 0 point at the drain of PMOS current mirror ( if connected near source of PM26/ PM27 ). Also cascading is able to give a decent gain of 113db but there is introduction of zeros as seen in the phase plot. I have removed the additional recycled path in the design as it takes away the symmetricity of the OTA thus leading to more mismatch. Final conclusion is that in order to get the best PSRR out of this design it needs to be symmetric. Following gm/id will surely reduce the lengths and increase the widths of the design so the overall Iq of the design will increase.
 
+# Multi-Stage Cascading and its effects on stability ( With Methodology )
+
+## 3-Stage Cascading
+
+### Schematic
+
+![image](https://github.com/user-attachments/assets/4179fa35-ed95-48ca-a643-ec89f5fd49d8)
+
+### Loop gain
+
+![image](https://github.com/user-attachments/assets/8cca1e4a-92a3-4fde-a563-8276de50fd37)
+
+
+### PSRR
+
+![image](https://github.com/user-attachments/assets/aa308844-d800-45a8-97ce-f65f334ca821)
+
+### Sizing
+
+![image](https://github.com/user-attachments/assets/fa18cd74-bfa8-4e84-a78c-462d960e82e7)
+
+### Poles and Zeros in the System
+
+![image](https://github.com/user-attachments/assets/2ecc946e-4904-431f-990c-dafc787fa56f)
+
+2 RHP zeros near 0 freq and 1 far away.
+
+## 4 stage Cascading
+
+### Schematic
+
+![image](https://github.com/user-attachments/assets/9b982cc7-c855-4f0f-98ee-75968ec009fd)
+
+### Loop gain
+
+![image](https://github.com/user-attachments/assets/b635c4c0-bc81-4aab-919e-c51a86abb227)
+
+### PSRR
+
+![image](https://github.com/user-attachments/assets/aeef73c8-1bc3-4408-9b76-2dca14d1398f)
+
+### Sizing
+
+![image](https://github.com/user-attachments/assets/8edd7bcd-fcc3-4dda-9d5b-8d2d34cc2916)
+
+### Poles and Zeros 
+
+![image](https://github.com/user-attachments/assets/4560a60c-7bdd-4109-9015-c6de8a70b5a5)
+
+### Conclusion
+
+As we keep on adding stages the number of RHP zeros keep on increasing and since we are operating at low Iq we are seeing multiple poles and zeros at low frequencies. So the methodology needs to be designed around poles keeping ft in mind and not gmro.
+
+
+
+
+
+
+
+
+
 
 
 
