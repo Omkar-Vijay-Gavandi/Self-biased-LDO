@@ -472,6 +472,54 @@ The stability is gone. Sizing needs to be fixed. PSRR improved slightly. High mi
 As we keep on adding stages the number of RHP zeros keep on increasing and since we are operating at low Iq we are seeing multiple poles and zeros at low frequencies. So the methodology needs to be designed around poles keeping ft in mind and not gmro.
 
 
+### My Octagon
+
+The differemt terms which come under my octagon are
+
+Area
+Power (Iq)
+Transient Response
+Gain
+PSRR
+Regulation
+Stability
+Corner Simulations
+
+# Stable System with Methodology
+
+## Schematic
+
+![image](https://github.com/user-attachments/assets/fabcee9b-de16-47ba-8421-4845b77ba9e4)
+
+## Loop gain and phase
+
+![image](https://github.com/user-attachments/assets/b47a2adc-a222-425d-ae44-bab765456b3f)
+
+## Total Iq with varying load
+
+![image](https://github.com/user-attachments/assets/918badac-6008-40c4-9c9a-d496c8872d77)
+
+## Regulated Output with varying load
+
+![image](https://github.com/user-attachments/assets/9d89fbbf-f702-4b35-89e1-05e6b20f3b21)
+
+## PSRR
+
+![image](https://github.com/user-attachments/assets/18be89b9-f11e-498a-a607-8297edab128d)
+
+The system is stable for all the different values of load current with minimum phase margin as 54 degrees and it increases as the load current keeps on increasing.
+
+## Conclusion
+
+The low Iq in the main OTA is achieved methodically but the values obtained using gm/Id methodology suggest values of width which are not supported by the PDK thus we go for the least possible width and its corresponding length. Thus when we try to see the gmoverid in the dcop post simulations we get different value to which we have designed it for. The second recycled NMOS pair contributes more towards a decrease in the Iq in its branch. It does not make any significant contribution towards increase in the overall gain of the circuit. 
+
+## Future work
+
+- The nmos recycled part does not seem to be sized properly according to the methodology. Need help in that part.
+- Need to tie this circuit to an application.
+
+
+
 
 
 
