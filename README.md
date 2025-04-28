@@ -519,10 +519,61 @@ The low Iq in the main OTA is achieved methodically but the values obtained usin
 - Need to tie this circuit to an application.
 
 
+# Recycled path analysis
+
+## Original circuit
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/587c75f5-645d-4b59-b6a0-10d6f6962889)
 
 
+Gain
+
+![image](https://github.com/user-attachments/assets/5757bfc0-b588-419a-b631-90edc811bc19)
 
 
+## Gain without recycled path
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/af94d4a5-73ae-494c-9278-d08c2fe7a570)
+
+Gain
+
+![image](https://github.com/user-attachments/assets/61010184-09c4-457f-ad89-b2190160398c)
+
+
+## With no diode connect
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/6ad463d9-356e-46c8-916f-484629d9d78e)
+
+
+Gain
+
+![image](https://github.com/user-attachments/assets/a36a20a1-83ab-4aa8-8804-1654b4a3aabb)
+
+
+## With only the recycled path
+
+Schematic
+
+![image](https://github.com/user-attachments/assets/a3aa82e9-70a8-4596-aaa9-232074887194)
+
+
+Gain
+
+![image](https://github.com/user-attachments/assets/780de436-69f1-4b7e-a408-6046d71aebe9)
+
+
+## Conclusion
+
+- Case 1:- We are getting a gain of 37db
+- Case 2:- We are getting similar gain of 37db but with the introduction of an external source can introduce noise in the circuit.
+- Case 3:- We are getting a reduced gain when there is no diode connect.
+- Case 4:- When we only have the recycled path in the circuit we are getting a better loop gain than Case 3 which indicates the importance of the recycled path.
 
 
 
