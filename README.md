@@ -577,7 +577,22 @@ Gain
 
 
 
+# What are Wake up Radio Systems
 
+A wake-up radio system typically consists of a low-power receiver (WuRx), a main radio, and a wake-up call transmitter (WuTx). The WuRx constantly monitors for a specific signal, the WuC, from the WuTx, which can be the node's main radio. Upon detecting the WuC, the WuRx triggers a signal to wake up the main radio, enabling it to communicate.
+
+
+## 🔋 Power Consumption of WuRx in Key Applications
+
+| Application Domain        | Typical WuRx Power | Notes |
+|---------------------------|--------------------|-------|
+| **Wireless Sensor Networks (WSN)** | **100 nW – 10 µW** | For event-driven wake-up in environmental/industrial sensing |
+| **Internet of Things (IoT)**       | **200 nW – 20 µW** | Used in smart home/city devices; lower when always listening |
+| **Medical Devices**                | **10 nW – 1 µW**   | Especially low-power for implantables or skin-contact devices |
+| **RFID & Asset Tracking**          | **1 µW – 10 µW**   | May use passive WuRx for triggered ID/response |
+| **Security/Surveillance**         | **10 µW – 50 µW**  | Higher performance needed for fast detection, moderate latency |
+| **Energy Harvesting Systems**      | **100 nW – 5 µW**  | Tight power budget; WuRx must operate near or below harvested power |
+| **Consumer Electronics**           | **10 µW – 100 µW** | Voice wake-up or gesture recognition needs slightly more power |
 
 
 
