@@ -595,6 +595,36 @@ A wake-up radio system typically consists of a low-power receiver (WuRx), a main
 | **Consumer Electronics**           | **10 µW – 100 µW** | Voice wake-up or gesture recognition needs slightly more power |
 
 
+## Feedback factor:- ( less than 1 and greater than 1)
+
+For feedback factor less than 1 
+
+- EA can be designed to handle lesser swing ( portion of the output voltage ) and thus there will be lesser load on the EA for the same output swing.
+- Loop gain and the PSRR will be lesser.
+
+For Feedback factor greater than 1 
+
+This will lead to a positive feedback.
+
+## Comparison with reference paper
+
+| **Parameter**              | **This Work**              | **Random Value**         |
+|---------------------------|----------------------------|--------------------------|
+| Technology                | 180 nm                     | 45 nm                   |
+| Capacitor-less            | yes                        | yes                      |
+| Size (µm²)                | 4310                       | 5120                    |
+| VIN (V)                   | 0.6                        | 1                     |
+| VOUT (V)                  | 0.5                        | 0.6                     |
+| IQ (nA)                   | 6.99                       | 3.88                    |
+| IL max (mA)               | 0.75                       | 1                    |
+| LS (mV/V)                 | 3.18                       |                     |
+| LR (mV/mA)                | 4.77                       | 5.32                     |
+| PSR @ 10 Hz (dB)          | -22.5 @ 0 A<br>-17 @ 500 µA | -41 @ 100uA A<br>-33 @ 500 µA |
+| PSR @ 10 kHz (dB)         | -24 @ 0 A<br>0 @ 500 µA     | -25 @ 100uA A<br>-23 @ 500 µA  |
+
+
+
+
 
 
 
