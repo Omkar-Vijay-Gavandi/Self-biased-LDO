@@ -619,8 +619,8 @@ This will lead to a positive feedback.
 | IL max (mA)               | 0.75                       | 1                    |
 | LS (mV/V)                 | 3.18                       |                     |
 | LR (mV/mA)                | 4.77                       | 5.32                     |
-| PSR @ 10 Hz (dB)          | -22.5 @ 0 A<br>-17 @ 500 µA | -41 @ 100uA A<br>-33 @ 500 µA |
-| PSR @ 10 kHz (dB)         | -24 @ 0 A<br>0 @ 500 µA     | -25 @ 100uA A<br>-23 @ 500 µA  |
+| PSR @ 10 Hz (dB)          | -22.5 @ 0 A<br>-17 @ 500 µA | -41 @ 100uA <br>-33 @ 500 µA |
+| PSR @ 10 kHz (dB)         | -24 @ 0 A<br>0 @ 500 µA     | -25 @ 100uA <br>-23 @ 500 µA  |
 
 
 
