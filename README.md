@@ -622,6 +622,20 @@ This will lead to a positive feedback.
 | PSR @ 10 Hz (dB)          | -22.5 @ 0 A<br>-17 @ 500 µA | -41 @ 100uA <br>-33 @ 500 µA |
 | PSR @ 10 kHz (dB)         | -24 @ 0 A<br>0 @ 500 µA     | -25 @ 100uA <br>-23 @ 500 µA  |
 
+## SCL 180-nm process
+
+### Paper published by IIITB Students
+
+https://ieeexplore.ieee.org/document/9190288/
+
+### Design to tapeout tutorial for SCL 180nm
+
+https://arxiv.org/pdf/1908.10674 ( written by Prof Joydeep Basu who was Gourab's Professor at Jadavpur under whom he ( Gourab ) has written a paper. So we can reach out to him for further details through Gourab )
+
+### IISC research on ESD for SCL 180nm
+
+https://www.indiascienceandtechnology.gov.in/research/high-voltage-esd-device-development-enablement-scl-180nm-cmos-technology
+
 
 
 
