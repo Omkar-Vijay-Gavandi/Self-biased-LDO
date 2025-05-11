@@ -636,6 +636,18 @@ https://arxiv.org/pdf/1908.10674 ( written by Prof Joydeep Basu who was Gourab's
 
 https://www.indiascienceandtechnology.gov.in/research/high-voltage-esd-device-development-enablement-scl-180nm-cmos-technology
 
+### E-fabless
+
+https://github.com/efabless/caravel?tab=readme-ov-file#analog-user-project
+
+### ISCAS papers ( class tapeout )
+
+They have summarised the entire coursework in the paper and have mentioned how they have integrated digital and analog classes and have taped out chips throughout a semester.
+
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8351506
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10558297
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10558544
+
 
 
 
