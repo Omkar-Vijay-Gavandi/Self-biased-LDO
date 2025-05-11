@@ -660,7 +660,9 @@ They have summarised the entire coursework in the paper and have mentioned how t
 
 ### TSMC papers 
 
-
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8050958 ( comes without micrograph ) Conference:- ISCAS
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10181422 ( comes with micrograph ) Conference:- ISCAS
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10884555 ( comes with micrograph ) Conference:- CICC
 
 
 
