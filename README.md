@@ -648,6 +648,17 @@ They have summarised the entire coursework in the paper and have mentioned how t
 - https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10558297
 - https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10558544
 
+### Skywater papers
+
+### UMC papers ( prompt given ( umc , LDO ) )
+
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6297490 ( comes with micrograph ) Conference:- CICC
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6719547 ( comes with micrograph ) Conference:- VLSI
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6778100 ( comes without micrograph ) Conference:- CICC
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6572139 ( comes without micrograph ) Conference:- ISCAS
+- https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6891377 ( comes without micrograph ) Conference:- JSCC
+
+### TSMC papers 
 
 
 
