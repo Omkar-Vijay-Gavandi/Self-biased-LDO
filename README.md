@@ -636,9 +636,9 @@ https://arxiv.org/pdf/1908.10674 ( written by Prof Joydeep Basu who was Gourab's
 
 https://www.indiascienceandtechnology.gov.in/research/high-voltage-esd-device-development-enablement-scl-180nm-cmos-technology
 
-### E-fabless
+### E-fabless ( Placeholders for analog and digital circuits )
 
-https://github.com/efabless/caravel?tab=readme-ov-file#analog-user-project
+https://github.com/efabless/caravel?tab=readme-ov-file#analog-user-project 
 
 ### ISCAS papers ( class tapeout )
 
