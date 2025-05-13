@@ -668,7 +668,7 @@ https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10884555 ( comes with m
 
 Current efficiency vs ( Iout and Temperature )
 
-### Load transient response ( From TI datasheet )
+### Load transient response [TPS7A02 Datasheet from TI](https://www.ti.com/lit/ds/symlink/tps7a02.pdf)
 
 The load-step transient response is the output voltage response by the LDO to a step in load current, whereby
 output voltage regulation is maintained. There are two key transitions during a load transient response: the
