@@ -664,6 +664,34 @@ https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8050958 ( comes without
 https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10181422 ( comes with micrograph ) Conference:- ISCAS
 https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10884555 ( comes with micrograph ) Conference:- CICC
 
+### Graphs which can be added in the paper
+
+Current efficiency vs ( Iout and Temperature )
+
+### Load transient response ( From TI datasheet )
+
+The load-step transient response is the output voltage response by the LDO to a step in load current, whereby
+output voltage regulation is maintained. There are two key transitions during a load transient response: the
+transition from a light to a heavy load and the transition from a heavy to a light load. The regions shown in Figure
+8-1 are broken down as follows. Regions A, E, and H are where the output voltage is in steady-state
+
+![image](https://github.com/user-attachments/assets/a162eb29-2f75-418f-b9b3-32aa2b43d43c)
+
+During transitions from a light load to a heavy load, the:
+- Initial voltage dip is a result of the depletion of the output capacitor charge and parasitic impedance to the
+  output capacitor (region B)
+- Recovery from the dip results from the LDO increasing the sourcing current, and leads to output voltage
+  regulation (region C)
+
+During transitions from a heavy load to a light load, the:
+- Initial voltage rise results from the LDO sourcing a large current, and leads to the output capacitor charge to
+  increase (region F)
+- Recovery from the rise results from the LDO decreasing the sourcing current in combination with the load
+  discharging the output capacitor (region G)
+  
+  A larger output capacitance reduces the peaks during a load transient but slows down the response time of the
+  device. A larger DC load also reduces the peaks because the amplitude of the transition is lowered and a higher
+  current discharge path is provided for the output capacitor.
 
 
 
