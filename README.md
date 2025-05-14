@@ -667,6 +667,9 @@ https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10884555 ( comes with m
 ### Graphs which can be added in the paper
 
 Current efficiency vs ( Iout and Temperature )
+Corner simulations vs regulation
+phase margin vs load current as in 1st Low Iq paper
+vary the load cap across the range of load currents to find the range of load cap for which the system is stable.
 
 ### Load transient response [TPS7A02 Datasheet from TI](https://www.ti.com/lit/ds/symlink/tps7a02.pdf)
 
@@ -693,5 +696,24 @@ During transitions from a heavy load to a light load, the:
   device. A larger DC load also reduces the peaks because the amplitude of the transition is lowered and a higher
   current discharge path is provided for the output capacitor.
 
+### Low Iq papers
 
+- [A 13.5-nA Quiescent Current LDO With Adaptive Ultra-Low-Power Mode for Low-Power IoT Applications](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10090469) ( Performance comparison )
+
+  Adaptively biased cirucit with load varioation from 100nA to 50mA. Iq varies from 13.5nA to 31nA from light load to heavy load. Thus it is able to support very light load and heavy load currents.
+
+- 
+### Introdcution
+
+- IOT devices / werables / WSN networks are going to low power consumption
+- They operate in standby mode for majority of time.
+- Benefits of on chip capacitors and counter off chip caps
+- Give brief of literature, their advantages and why they are not suitable for our desired application.
+
+
+### OCL paper
+
+[A 6-W Chip-Area-Efficient Output-Capacitorless LDO in 90-nm CMOS Technology](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5556413)
+
+explains the reason to go for OCL based caps.
 
